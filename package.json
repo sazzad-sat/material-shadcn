@@ -1,0 +1,14 @@
+{
+  "name": "material-shadcn",
+  "private": true,
+  "workspaces": ["packages/*", "apps/*"],
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "generate:themes": "turbo generate:themes"
+  },
+  "devDependencies": {
+    "turbo": "^2",
+    "typescript": "^5.8"
+  }
+}

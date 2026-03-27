@@ -1,0 +1,31 @@
+# dependencies
+node_modules/
+
+# build output
+dist/
+.output/
+.vinxi/
+.vite/
+
+# env
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# turbo
+.turbo/
+
+# debug
+npm-debug.log*
+pnpm-debug.log*
+
+# test
+coverage/
+bun.lock
