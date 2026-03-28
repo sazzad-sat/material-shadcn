@@ -5,6 +5,15 @@ import { SECTIONS } from '@/demos'
 import { useSidebarNav } from '@/hooks/use-sidebar-nav'
 
 export const Route = createFileRoute('/components')({
+  head: () => ({
+    meta: [
+      { title: 'Components — material-shadcn' },
+      { name: 'description', content: 'Every shadcn/ui component themed with Material 3 colors. Buttons, inputs, cards, switches, and more.' },
+      { property: 'og:title', content: 'Components — material-shadcn' },
+      { property: 'og:description', content: 'Every shadcn/ui component themed with Material 3 colors. Buttons, inputs, cards, switches, and more.' },
+      { property: 'og:url', content: 'https://material-shadcn.vercel.app/components' },
+    ],
+  }),
   component: Components,
 })
 

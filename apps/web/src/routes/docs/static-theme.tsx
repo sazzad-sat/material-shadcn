@@ -29,6 +29,15 @@ const VARIANTS: Array<{ name: string; value: Variant; slug: string }> = [
 ]
 
 export const Route = createFileRoute('/docs/static-theme')({
+  head: () => ({
+    meta: [
+      { title: 'Static Theme — material-shadcn' },
+      { name: 'description', content: 'Generate a CSS theme file with Material 3 colors. One CLI command, no runtime dependencies.' },
+      { property: 'og:title', content: 'Static Theme — material-shadcn' },
+      { property: 'og:description', content: 'Generate a CSS theme file with Material 3 colors. One CLI command, no runtime dependencies.' },
+      { property: 'og:url', content: 'https://material-shadcn.vercel.app/docs/static-theme' },
+    ],
+  }),
   component: StaticTheme,
 })
 
