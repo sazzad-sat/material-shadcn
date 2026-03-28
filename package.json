@@ -1,6 +1,7 @@
 {
   "name": "material-shadcn",
   "private": true,
+  "packageManager": "bun@1.3.0",
   "workspaces": ["packages/*", "apps/*"],
   "scripts": {
     "dev": "turbo dev",
