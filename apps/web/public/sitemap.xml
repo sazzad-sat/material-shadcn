@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://material-shadcn.vercel.app/</loc></url>
+  <url><loc>https://material-shadcn.vercel.app/components</loc></url>
+  <url><loc>https://material-shadcn.vercel.app/charts</loc></url>
+  <url><loc>https://material-shadcn.vercel.app/docs</loc></url>
+  <url><loc>https://material-shadcn.vercel.app/docs/static-theme</loc></url>
+  <url><loc>https://material-shadcn.vercel.app/docs/dynamic-theme</loc></url>
+  <url><loc>https://material-shadcn.vercel.app/docs/reference</loc></url>
+</urlset>

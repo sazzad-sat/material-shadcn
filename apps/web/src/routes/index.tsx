@@ -77,6 +77,15 @@ function ContentCard({
 }
 
 export const Route = createFileRoute('/')({
+  head: () => ({
+    meta: [
+      { title: 'material-shadcn — Material 3 colors for shadcn/ui' },
+      { name: 'description', content: 'Pick a seed color and generate a full Material 3 color palette for shadcn/ui. Preview themes live with light and dark mode.' },
+      { name: 'og:title', content: 'material-shadcn — Material 3 colors for shadcn/ui' },
+      { name: 'og:description', content: 'Pick a seed color and generate a full Material 3 color palette for shadcn/ui. Preview themes live with light and dark mode.' },
+      { name: 'og:url', content: 'https://material-shadcn.vercel.app/' },
+    ],
+  }),
   component: Home,
 })
 

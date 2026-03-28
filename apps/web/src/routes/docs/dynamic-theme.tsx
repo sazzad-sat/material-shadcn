@@ -2,6 +2,15 @@ import { createFileRoute, Link } from '@tanstack/react-router'
 import { CodeBlock } from '../../components/code-block'
 
 export const Route = createFileRoute('/docs/dynamic-theme')({
+  head: () => ({
+    meta: [
+      { title: 'Dynamic Theme — material-shadcn' },
+      { name: 'description', content: 'A React provider for runtime theming with user-selected colors, scoped palettes, and dark mode support.' },
+      { name: 'og:title', content: 'Dynamic Theme — material-shadcn' },
+      { name: 'og:description', content: 'A React provider for runtime theming with user-selected colors, scoped palettes, and dark mode support.' },
+      { name: 'og:url', content: 'https://material-shadcn.vercel.app/docs/dynamic-theme' },
+    ],
+  }),
   component: DynamicTheme,
 })
 
