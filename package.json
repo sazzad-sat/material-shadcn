@@ -5,9 +5,13 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "generate:themes": "turbo generate:themes"
+    "generate:themes": "turbo generate:themes",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "turbo build && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.30.0",
     "turbo": "^2",
     "typescript": "^5.8"
   }

@@ -1,5 +1,6 @@
 import { HeadContent, Outlet, Scripts, createRootRoute } from '@tanstack/react-router'
 import { Theme } from '../../registry/theme'
+import { SiteHeader, SiteFooter } from '@/components/site-layout'
 import appCss from '../styles.css?url'
 
 export const Route = createRootRoute({
@@ -28,10 +29,15 @@ function RootComponent() {
     <html lang="en" suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: `(function(){try{var s=JSON.parse(localStorage.getItem("material-shadcn-theme"));var m=s&&s.colorMode;if(m==="dark"||(m!=="light"&&matchMedia("(prefers-color-scheme:dark)").matches))document.documentElement.classList.add("dark")}catch(e){}})()` }} />
       </head>
       <body>
         <Theme>
-          <Outlet />
+          <div className="min-h-screen bg-background text-foreground">
+            <SiteHeader />
+            <Outlet />
+            <SiteFooter />
+          </div>
         </Theme>
         <Scripts />
       </body>

@@ -13,7 +13,6 @@ import {
 import {
   generateTheme,
   applyTheme,
-  removeTheme,
   tokensToCssVars,
   resolveColorMode,
   sourceColorFromImage,
@@ -32,6 +31,7 @@ interface ThemeContextValue {
   variant: Variant
   colorMode: ColorMode
   resolvedDark: boolean
+  hydrated: boolean
   theme: GeneratedTheme
   setSeed: (seed: string | HTMLImageElement) => void
   setVariant: (variant: Variant) => void
@@ -249,13 +249,14 @@ function RootTheme({
       variant: settings.variant,
       colorMode: settings.colorMode,
       resolvedDark,
+      hydrated,
       theme,
       setSeed,
       setVariant,
       setColorMode,
       cycleColorMode,
     }),
-    [resolvedSeed, settings.variant, settings.colorMode, resolvedDark, theme, setSeed, setVariant, setColorMode, cycleColorMode]
+    [resolvedSeed, settings.variant, settings.colorMode, resolvedDark, hydrated, theme, setSeed, setVariant, setColorMode, cycleColorMode]
   )
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>

@@ -90,16 +90,16 @@ function DynamicPathCard() {
       className="group block rounded-2xl border border-border overflow-hidden hover:border-primary/40 transition-colors"
     >
       {/* Visual: shifting color grid */}
-      <div className="p-5 pb-4">
-        <div className="grid grid-cols-5 gap-1">
+      <div className="p-5 pb-4 overflow-hidden">
+        <div className="grid grid-cols-5 gap-2">
           {DYNAMIC_SEEDS.map((seed, i) => {
             const st = generateTheme({ seed, variant: Variant.TONAL_SPOT })
             const tokens = resolvedDark ? st.dark : st.light
             const isActive = i === seedIndex
             return (
-              <div key={seed} className="flex flex-col gap-1">
+              <div key={seed} className="flex flex-col items-center gap-1 min-w-0">
                 <div
-                  className="aspect-square rounded-md transition-all duration-700"
+                  className="aspect-square w-full max-w-16 rounded-md transition-all duration-700"
                   style={{
                     backgroundColor: tokens.primary,
                     opacity: isActive ? 1 : 0.3,
@@ -107,7 +107,7 @@ function DynamicPathCard() {
                   }}
                 />
                 <div
-                  className="h-1 rounded-full transition-all duration-700"
+                  className="h-1 w-full max-w-16 rounded-full transition-all duration-700"
                   style={{
                     backgroundColor: tokens.secondary,
                     opacity: isActive ? 1 : 0.2,
