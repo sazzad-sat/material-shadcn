@@ -164,11 +164,19 @@ function RootTheme({
     colorMode: colorModeProp,
   }
 
-  const [settings, setSettings] = useState(() => loadSettings(storageKey, defaults))
+  // Always start with defaults for SSR, then hydrate from localStorage in an effect
+  const [settings, setSettings] = useState(defaults)
+  const [hydrated, setHydrated] = useState(false)
   const resolvedSeed = useSeedResolver(settings.seed, defaults.seed)
-  const [resolvedDark, setResolvedDark] = useState(() =>
-    resolveColorMode(settings.colorMode)
-  )
+  const [resolvedDark, setResolvedDark] = useState(false)
+
+  // Hydrate from localStorage after mount to avoid SSR mismatch
+  useEffect(() => {
+    const stored = loadSettings(storageKey, defaults)
+    setSettings(stored)
+    setResolvedDark(resolveColorMode(stored.colorMode))
+    setHydrated(true)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
   const theme = useMemo(
     () => generateTheme({ seed: resolvedSeed, variant: settings.variant, contrast }),
@@ -180,8 +188,9 @@ function RootTheme({
     applyTheme(document.documentElement, theme, resolvedDark)
   }, [theme, resolvedDark])
 
-  // System preference listener
+  // System preference listener (skip before hydration)
   useEffect(() => {
+    if (!hydrated) return
     setResolvedDark(resolveColorMode(settings.colorMode))
 
     if (settings.colorMode === "system") {
@@ -190,7 +199,7 @@ function RootTheme({
       mq.addEventListener("change", handler)
       return () => mq.removeEventListener("change", handler)
     }
-  }, [settings.colorMode])
+  }, [settings.colorMode, hydrated])
 
   // Persist
   useEffect(() => {
