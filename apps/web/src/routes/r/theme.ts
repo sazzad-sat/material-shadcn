@@ -1,11 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { readFileSync } from 'fs'
-import { join } from 'path'
-
-const THEME_SOURCE = readFileSync(
-  join(import.meta.dirname, '../../../registry/theme.tsx'),
-  'utf-8'
-)
+// @ts-expect-error Vite raw import
+import THEME_SOURCE from '../../../registry/theme.tsx?raw'
 
 const registry = JSON.stringify({
   name: "theme",
