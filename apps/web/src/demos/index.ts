@@ -1,58 +1,4 @@
-import type { ComponentType } from 'react'
-
-import { AccordionDemo } from './accordion'
-import { AlertDemo } from './alert'
-import { AlertDialogDemo } from './alert-dialog'
-import { AspectRatioDemo } from './aspect-ratio'
-import { AvatarDemo } from './avatar'
-import { BadgeDemo } from './badge'
-import { BreadcrumbDemo } from './breadcrumb'
-import { ButtonDemo } from './button'
-import { ButtonGroupDemo } from './button-group'
-import { CalendarDemo } from './calendar'
-import { CarouselDemo } from './carousel'
-import { CardDemo } from './card'
-import { ChartDemo } from './chart'
-import { CheckboxDemo } from './checkbox'
-import { CollapsibleDemo } from './collapsible'
-import { ComboboxDemo } from './combobox'
-import { CommandDemo } from './command'
-import { ContextMenuDemo } from './context-menu'
-import { DialogDemo } from './dialog'
-import { DrawerDemo } from './drawer'
-import { DropdownMenuDemo } from './dropdown-menu'
-import { EmptyDemo } from './empty'
-import { HoverCardDemo } from './hover-card'
-import { InputDemo } from './input'
-import { InputGroupDemo } from './input-group'
-import { InputOTPDemo } from './input-otp'
-import { ItemDemo } from './item'
-import { KbdDemo } from './kbd'
-import { LabelDemo } from './label'
-import { MenubarDemo } from './menubar'
-import { NativeSelectDemo } from './native-select'
-import { NavigationMenuDemo } from './navigation-menu'
-import { PaginationDemo } from './pagination'
-import { PopoverDemo } from './popover'
-import { ProgressDemo } from './progress'
-import { RadioGroupDemo } from './radio-group'
-import { ResizableDemo } from './resizable'
-import { ScrollAreaDemo } from './scroll-area'
-import { SelectDemo } from './select'
-import { SeparatorDemo } from './separator'
-import { SheetDemo } from './sheet'
-import { SidebarDemo } from './sidebar'
-import { SkeletonDemo } from './skeleton'
-import { SliderDemo } from './slider'
-import { SonnerDemo } from './sonner'
-import { SpinnerDemo } from './spinner'
-import { SwitchDemo } from './switch'
-import { TableDemo } from './table'
-import { TabsDemo } from './tabs'
-import { TextareaDemo } from './textarea'
-import { ToggleDemo } from './toggle'
-import { ToggleGroupDemo } from './toggle-group'
-import { TooltipDemo } from './tooltip'
+import { lazy, type ComponentType } from 'react'
 
 export interface DemoSection {
   id: string
@@ -61,57 +7,57 @@ export interface DemoSection {
 }
 
 export const SECTIONS: DemoSection[] = [
-  { id: 'accordion', label: 'Accordion', component: AccordionDemo },
-  { id: 'alert', label: 'Alert', component: AlertDemo },
-  { id: 'alert-dialog', label: 'Alert Dialog', component: AlertDialogDemo },
-  { id: 'aspect-ratio', label: 'Aspect Ratio', component: AspectRatioDemo },
-  { id: 'avatar', label: 'Avatar', component: AvatarDemo },
-  { id: 'badge', label: 'Badge', component: BadgeDemo },
-  { id: 'breadcrumb', label: 'Breadcrumb', component: BreadcrumbDemo },
-  { id: 'button', label: 'Button', component: ButtonDemo },
-  { id: 'button-group', label: 'Button Group', component: ButtonGroupDemo },
-  { id: 'calendar', label: 'Calendar', component: CalendarDemo },
-  { id: 'carousel', label: 'Carousel', component: CarouselDemo },
-  { id: 'card', label: 'Card', component: CardDemo },
-  { id: 'chart', label: 'Chart', component: ChartDemo },
-  { id: 'checkbox', label: 'Checkbox', component: CheckboxDemo },
-  { id: 'collapsible', label: 'Collapsible', component: CollapsibleDemo },
-  { id: 'combobox', label: 'Combobox', component: ComboboxDemo },
-  { id: 'command', label: 'Command', component: CommandDemo },
-  { id: 'context-menu', label: 'Context Menu', component: ContextMenuDemo },
-  { id: 'dialog', label: 'Dialog', component: DialogDemo },
-  { id: 'drawer', label: 'Drawer', component: DrawerDemo },
-  { id: 'dropdown-menu', label: 'Dropdown Menu', component: DropdownMenuDemo },
-  { id: 'empty', label: 'Empty', component: EmptyDemo },
-  { id: 'hover-card', label: 'Hover Card', component: HoverCardDemo },
-  { id: 'input', label: 'Input', component: InputDemo },
-  { id: 'input-group', label: 'Input Group', component: InputGroupDemo },
-  { id: 'input-otp', label: 'Input OTP', component: InputOTPDemo },
-  { id: 'item', label: 'Item', component: ItemDemo },
-  { id: 'kbd', label: 'Kbd', component: KbdDemo },
-  { id: 'label', label: 'Label', component: LabelDemo },
-  { id: 'menubar', label: 'Menubar', component: MenubarDemo },
-  { id: 'native-select', label: 'Native Select', component: NativeSelectDemo },
-  { id: 'navigation-menu', label: 'Navigation Menu', component: NavigationMenuDemo },
-  { id: 'pagination', label: 'Pagination', component: PaginationDemo },
-  { id: 'popover', label: 'Popover', component: PopoverDemo },
-  { id: 'progress', label: 'Progress', component: ProgressDemo },
-  { id: 'radio-group', label: 'Radio Group', component: RadioGroupDemo },
-  { id: 'resizable', label: 'Resizable', component: ResizableDemo },
-  { id: 'scroll-area', label: 'Scroll Area', component: ScrollAreaDemo },
-  { id: 'select', label: 'Select', component: SelectDemo },
-  { id: 'separator', label: 'Separator', component: SeparatorDemo },
-  { id: 'sheet', label: 'Sheet', component: SheetDemo },
-  { id: 'sidebar', label: 'Sidebar', component: SidebarDemo },
-  { id: 'skeleton', label: 'Skeleton', component: SkeletonDemo },
-  { id: 'slider', label: 'Slider', component: SliderDemo },
-  { id: 'sonner', label: 'Sonner', component: SonnerDemo },
-  { id: 'spinner', label: 'Spinner', component: SpinnerDemo },
-  { id: 'switch', label: 'Switch', component: SwitchDemo },
-  { id: 'table', label: 'Table', component: TableDemo },
-  { id: 'tabs', label: 'Tabs', component: TabsDemo },
-  { id: 'textarea', label: 'Textarea', component: TextareaDemo },
-  { id: 'toggle', label: 'Toggle', component: ToggleDemo },
-  { id: 'toggle-group', label: 'Toggle Group', component: ToggleGroupDemo },
-  { id: 'tooltip', label: 'Tooltip', component: TooltipDemo },
+  { id: 'accordion', label: 'Accordion', component: lazy(() => import('./accordion').then(m => ({ default: m.AccordionDemo }))) },
+  { id: 'alert', label: 'Alert', component: lazy(() => import('./alert').then(m => ({ default: m.AlertDemo }))) },
+  { id: 'alert-dialog', label: 'Alert Dialog', component: lazy(() => import('./alert-dialog').then(m => ({ default: m.AlertDialogDemo }))) },
+  { id: 'aspect-ratio', label: 'Aspect Ratio', component: lazy(() => import('./aspect-ratio').then(m => ({ default: m.AspectRatioDemo }))) },
+  { id: 'avatar', label: 'Avatar', component: lazy(() => import('./avatar').then(m => ({ default: m.AvatarDemo }))) },
+  { id: 'badge', label: 'Badge', component: lazy(() => import('./badge').then(m => ({ default: m.BadgeDemo }))) },
+  { id: 'breadcrumb', label: 'Breadcrumb', component: lazy(() => import('./breadcrumb').then(m => ({ default: m.BreadcrumbDemo }))) },
+  { id: 'button', label: 'Button', component: lazy(() => import('./button').then(m => ({ default: m.ButtonDemo }))) },
+  { id: 'button-group', label: 'Button Group', component: lazy(() => import('./button-group').then(m => ({ default: m.ButtonGroupDemo }))) },
+  { id: 'calendar', label: 'Calendar', component: lazy(() => import('./calendar').then(m => ({ default: m.CalendarDemo }))) },
+  { id: 'carousel', label: 'Carousel', component: lazy(() => import('./carousel').then(m => ({ default: m.CarouselDemo }))) },
+  { id: 'card', label: 'Card', component: lazy(() => import('./card').then(m => ({ default: m.CardDemo }))) },
+  { id: 'chart', label: 'Chart', component: lazy(() => import('./chart').then(m => ({ default: m.ChartDemo }))) },
+  { id: 'checkbox', label: 'Checkbox', component: lazy(() => import('./checkbox').then(m => ({ default: m.CheckboxDemo }))) },
+  { id: 'collapsible', label: 'Collapsible', component: lazy(() => import('./collapsible').then(m => ({ default: m.CollapsibleDemo }))) },
+  { id: 'combobox', label: 'Combobox', component: lazy(() => import('./combobox').then(m => ({ default: m.ComboboxDemo }))) },
+  { id: 'command', label: 'Command', component: lazy(() => import('./command').then(m => ({ default: m.CommandDemo }))) },
+  { id: 'context-menu', label: 'Context Menu', component: lazy(() => import('./context-menu').then(m => ({ default: m.ContextMenuDemo }))) },
+  { id: 'dialog', label: 'Dialog', component: lazy(() => import('./dialog').then(m => ({ default: m.DialogDemo }))) },
+  { id: 'drawer', label: 'Drawer', component: lazy(() => import('./drawer').then(m => ({ default: m.DrawerDemo }))) },
+  { id: 'dropdown-menu', label: 'Dropdown Menu', component: lazy(() => import('./dropdown-menu').then(m => ({ default: m.DropdownMenuDemo }))) },
+  { id: 'empty', label: 'Empty', component: lazy(() => import('./empty').then(m => ({ default: m.EmptyDemo }))) },
+  { id: 'hover-card', label: 'Hover Card', component: lazy(() => import('./hover-card').then(m => ({ default: m.HoverCardDemo }))) },
+  { id: 'input', label: 'Input', component: lazy(() => import('./input').then(m => ({ default: m.InputDemo }))) },
+  { id: 'input-group', label: 'Input Group', component: lazy(() => import('./input-group').then(m => ({ default: m.InputGroupDemo }))) },
+  { id: 'input-otp', label: 'Input OTP', component: lazy(() => import('./input-otp').then(m => ({ default: m.InputOTPDemo }))) },
+  { id: 'item', label: 'Item', component: lazy(() => import('./item').then(m => ({ default: m.ItemDemo }))) },
+  { id: 'kbd', label: 'Kbd', component: lazy(() => import('./kbd').then(m => ({ default: m.KbdDemo }))) },
+  { id: 'label', label: 'Label', component: lazy(() => import('./label').then(m => ({ default: m.LabelDemo }))) },
+  { id: 'menubar', label: 'Menubar', component: lazy(() => import('./menubar').then(m => ({ default: m.MenubarDemo }))) },
+  { id: 'native-select', label: 'Native Select', component: lazy(() => import('./native-select').then(m => ({ default: m.NativeSelectDemo }))) },
+  { id: 'navigation-menu', label: 'Navigation Menu', component: lazy(() => import('./navigation-menu').then(m => ({ default: m.NavigationMenuDemo }))) },
+  { id: 'pagination', label: 'Pagination', component: lazy(() => import('./pagination').then(m => ({ default: m.PaginationDemo }))) },
+  { id: 'popover', label: 'Popover', component: lazy(() => import('./popover').then(m => ({ default: m.PopoverDemo }))) },
+  { id: 'progress', label: 'Progress', component: lazy(() => import('./progress').then(m => ({ default: m.ProgressDemo }))) },
+  { id: 'radio-group', label: 'Radio Group', component: lazy(() => import('./radio-group').then(m => ({ default: m.RadioGroupDemo }))) },
+  { id: 'resizable', label: 'Resizable', component: lazy(() => import('./resizable').then(m => ({ default: m.ResizableDemo }))) },
+  { id: 'scroll-area', label: 'Scroll Area', component: lazy(() => import('./scroll-area').then(m => ({ default: m.ScrollAreaDemo }))) },
+  { id: 'select', label: 'Select', component: lazy(() => import('./select').then(m => ({ default: m.SelectDemo }))) },
+  { id: 'separator', label: 'Separator', component: lazy(() => import('./separator').then(m => ({ default: m.SeparatorDemo }))) },
+  { id: 'sheet', label: 'Sheet', component: lazy(() => import('./sheet').then(m => ({ default: m.SheetDemo }))) },
+  { id: 'sidebar', label: 'Sidebar', component: lazy(() => import('./sidebar').then(m => ({ default: m.SidebarDemo }))) },
+  { id: 'skeleton', label: 'Skeleton', component: lazy(() => import('./skeleton').then(m => ({ default: m.SkeletonDemo }))) },
+  { id: 'slider', label: 'Slider', component: lazy(() => import('./slider').then(m => ({ default: m.SliderDemo }))) },
+  { id: 'sonner', label: 'Sonner', component: lazy(() => import('./sonner').then(m => ({ default: m.SonnerDemo }))) },
+  { id: 'spinner', label: 'Spinner', component: lazy(() => import('./spinner').then(m => ({ default: m.SpinnerDemo }))) },
+  { id: 'switch', label: 'Switch', component: lazy(() => import('./switch').then(m => ({ default: m.SwitchDemo }))) },
+  { id: 'table', label: 'Table', component: lazy(() => import('./table').then(m => ({ default: m.TableDemo }))) },
+  { id: 'tabs', label: 'Tabs', component: lazy(() => import('./tabs').then(m => ({ default: m.TabsDemo }))) },
+  { id: 'textarea', label: 'Textarea', component: lazy(() => import('./textarea').then(m => ({ default: m.TextareaDemo }))) },
+  { id: 'toggle', label: 'Toggle', component: lazy(() => import('./toggle').then(m => ({ default: m.ToggleDemo }))) },
+  { id: 'toggle-group', label: 'Toggle Group', component: lazy(() => import('./toggle-group').then(m => ({ default: m.ToggleGroupDemo }))) },
+  { id: 'tooltip', label: 'Tooltip', component: lazy(() => import('./tooltip').then(m => ({ default: m.TooltipDemo }))) },
 ]

@@ -12,7 +12,9 @@ export function CommandDemo() {
     const scrollY = window.scrollY
     setMounted(true)
     requestAnimationFrame(() => {
-      window.scrollTo(0, scrollY)
+      requestAnimationFrame(() => {
+        window.scrollTo(0, scrollY)
+      })
     })
   }, [])
 

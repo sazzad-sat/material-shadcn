@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { useState, useEffect, useCallback } from 'react'
+import { useSidebarNav } from '@/hooks/use-sidebar-nav'
 import {
   Bar, BarChart, Line, LineChart, Area, AreaChart, Pie, PieChart,
   Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
@@ -134,32 +134,7 @@ const SECTIONS = [
 ]
 
 function Charts() {
-  const [search, setSearch] = useState('')
-  const [activeId, setActiveId] = useState('')
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActiveId(entry.target.id)
-        }
-      },
-      { rootMargin: '-10% 0px -80% 0px' }
-    )
-    for (const s of SECTIONS) {
-      const el = document.getElementById(s.id)
-      if (el) observer.observe(el)
-    }
-    return () => observer.disconnect()
-  }, [])
-
-  const filteredSections = SECTIONS.filter((s) =>
-    s.label.toLowerCase().includes(search.toLowerCase())
-  )
-
-  const scrollTo = useCallback((id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }, [])
+  const { search, setSearch, activeId, filteredSections, scrollTo } = useSidebarNav(SECTIONS)
 
   return (
     <div className="mx-auto max-w-6xl flex px-6">

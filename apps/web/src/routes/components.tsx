@@ -1,39 +1,15 @@
+import { Suspense } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { useState, useEffect, useCallback } from 'react'
 import { TooltipProvider } from '@/components/ui/tooltip'
 import { SECTIONS } from '@/demos'
+import { useSidebarNav } from '@/hooks/use-sidebar-nav'
 
 export const Route = createFileRoute('/components')({
   component: Components,
 })
 
 function Components() {
-  const [search, setSearch] = useState('')
-  const [activeId, setActiveId] = useState('')
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) setActiveId(entry.target.id)
-        }
-      },
-      { rootMargin: '-10% 0px -80% 0px' }
-    )
-    for (const s of SECTIONS) {
-      const el = document.getElementById(s.id)
-      if (el) observer.observe(el)
-    }
-    return () => observer.disconnect()
-  }, [])
-
-  const filteredSections = SECTIONS.filter((s) =>
-    s.label.toLowerCase().includes(search.toLowerCase())
-  )
-
-  const scrollTo = useCallback((id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-  }, [])
+  const { search, setSearch, activeId, filteredSections, scrollTo } = useSidebarNav(SECTIONS)
 
   return (
     <TooltipProvider delayDuration={200}>
@@ -75,7 +51,9 @@ function Components() {
               <section key={s.id} id={s.id} className="scroll-mt-20">
                 <h2 className="mb-4 text-lg font-semibold tracking-tight">{s.label}</h2>
                 <div className="rounded-xl border border-dashed border-border p-6">
-                  <s.component />
+                  <Suspense fallback={<div className="h-24 animate-pulse rounded-lg bg-muted" />}>
+                    <s.component />
+                  </Suspense>
                 </div>
               </section>
             ))}
