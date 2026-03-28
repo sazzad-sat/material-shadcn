@@ -1,0 +1,5 @@
+{
+  "installCommand": "bun install",
+  "buildCommand": "cd packages/core && bun run build && cd ../../apps/web && bun run build && cp -r .vercel/output ../../.vercel/output",
+  "framework": null
+}

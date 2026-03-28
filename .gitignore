@@ -28,4 +28,9 @@ pnpm-debug.log*
 
 # test
 coverage/
-bun.lock
+
+# lockfiles (using bun)
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+.vercel

@@ -17,7 +17,7 @@ export function InstallCommand({ color, variant }: InstallCommandProps) {
   const [pm, setPm] = useState<(typeof PACKAGE_MANAGERS)[number]>(PACKAGE_MANAGERS[0])
   const hex = color.replace('#', '')
   const variantParam = variant ? `?variant=${variant}` : ''
-  const command = `${pm.prefix} shadcn@latest add https://material-shadcn.dev/r/${hex}${variantParam}`
+  const command = `${pm.prefix} shadcn@latest add https://material-shadcn.vercel.app/r/${hex}${variantParam}`
 
   const handleCopy = async () => {
     await navigator.clipboard.writeText(command)

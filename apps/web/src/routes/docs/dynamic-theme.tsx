@@ -20,7 +20,7 @@ function DynamicTheme() {
         <h2 className="text-xl font-semibold tracking-tight sm:text-2xl mb-4">Install</h2>
 
         <h3 className="text-sm font-semibold mb-3">1. Add the Theme component</h3>
-        <CodeBlock>{`npx shadcn@latest add https://material-shadcn.dev/r/theme`}</CodeBlock>
+        <CodeBlock>{`npx shadcn@latest add https://material-shadcn.vercel.app/r/theme`}</CodeBlock>
         <p className="text-sm text-muted-foreground mt-3 mb-8">
           Adds <code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">components/theme.tsx</code> and
           installs <code className="rounded bg-muted px-1.5 py-0.5 text-xs font-mono">material-shadcn</code> automatically.
