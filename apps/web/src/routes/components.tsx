@@ -204,7 +204,8 @@ function Components() {
         <header className="sticky top-0 z-50 border-b border-border/50 bg-background/90 backdrop-blur-md">
           <div className="mx-auto flex max-w-6xl items-center justify-between px-6 h-14">
             <div className="flex items-center gap-8">
-              <Link to="/" className="text-lg font-bold tracking-tight text-foreground">
+              <Link to="/" className="flex items-center gap-2 text-lg font-bold tracking-tight text-foreground">
+                <svg width="20" height="20" viewBox="0 0 256 256" fill="none"><defs><linearGradient id="ug" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stopColor="#FBBC05"/><stop offset="100%" stopColor="#EA4335"/></linearGradient><linearGradient id="lwg" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stopColor="#4285F4"/><stop offset="100%" stopColor="#34A853"/></linearGradient></defs><path d="M192 40L40 192" stroke="url(#ug)" strokeWidth="32" strokeLinecap="round"/><path d="M208 128L128 208" stroke="url(#lwg)" strokeWidth="32" strokeLinecap="round"/></svg>
                 material-shadcn
               </Link>
               <nav className="hidden items-center gap-1 sm:flex">
