@@ -8,9 +8,9 @@ export const Route = createFileRoute('/docs/')({
     meta: [
       { title: 'Docs — material-shadcn' },
       { name: 'description', content: 'Choose between a static CSS theme or a dynamic React provider. Two paths to Material 3 colors in shadcn/ui.' },
-      { name: 'og:title', content: 'Docs — material-shadcn' },
-      { name: 'og:description', content: 'Choose between a static CSS theme or a dynamic React provider. Two paths to Material 3 colors in shadcn/ui.' },
-      { name: 'og:url', content: 'https://material-shadcn.vercel.app/docs' },
+      { property: 'og:title', content: 'Docs — material-shadcn' },
+      { property: 'og:description', content: 'Choose between a static CSS theme or a dynamic React provider. Two paths to Material 3 colors in shadcn/ui.' },
+      { property: 'og:url', content: 'https://material-shadcn.vercel.app/docs/' },
     ],
   }),
   component: DocsOverview,

@@ -9,9 +9,9 @@ export const Route = createFileRoute('/components')({
     meta: [
       { title: 'Components — material-shadcn' },
       { name: 'description', content: 'Every shadcn/ui component themed with Material 3 colors. Buttons, inputs, cards, switches, and more.' },
-      { name: 'og:title', content: 'Components — material-shadcn' },
-      { name: 'og:description', content: 'Every shadcn/ui component themed with Material 3 colors. Buttons, inputs, cards, switches, and more.' },
-      { name: 'og:url', content: 'https://material-shadcn.vercel.app/components' },
+      { property: 'og:title', content: 'Components — material-shadcn' },
+      { property: 'og:description', content: 'Every shadcn/ui component themed with Material 3 colors. Buttons, inputs, cards, switches, and more.' },
+      { property: 'og:url', content: 'https://material-shadcn.vercel.app/components' },
     ],
   }),
   component: Components,

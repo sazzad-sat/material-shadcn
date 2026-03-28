@@ -5,9 +5,9 @@ export const Route = createFileRoute('/docs/reference')({
     meta: [
       { title: 'API Reference — material-shadcn' },
       { name: 'description', content: 'Props, hooks, and Variant enum reference for the material-shadcn Theme component.' },
-      { name: 'og:title', content: 'API Reference — material-shadcn' },
-      { name: 'og:description', content: 'Props, hooks, and Variant enum reference for the material-shadcn Theme component.' },
-      { name: 'og:url', content: 'https://material-shadcn.vercel.app/docs/reference' },
+      { property: 'og:title', content: 'API Reference — material-shadcn' },
+      { property: 'og:description', content: 'Props, hooks, and Variant enum reference for the material-shadcn Theme component.' },
+      { property: 'og:url', content: 'https://material-shadcn.vercel.app/docs/reference' },
     ],
   }),
   component: Reference,

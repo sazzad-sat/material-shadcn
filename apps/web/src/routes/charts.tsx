@@ -18,9 +18,9 @@ export const Route = createFileRoute('/charts')({
     meta: [
       { title: 'Charts — material-shadcn' },
       { name: 'description', content: 'Recharts demos styled with Material 3 color tokens. Bar, line, area, pie, radar, and radial charts.' },
-      { name: 'og:title', content: 'Charts — material-shadcn' },
-      { name: 'og:description', content: 'Recharts demos styled with Material 3 color tokens. Bar, line, area, pie, radar, and radial charts.' },
-      { name: 'og:url', content: 'https://material-shadcn.vercel.app/charts' },
+      { property: 'og:title', content: 'Charts — material-shadcn' },
+      { property: 'og:description', content: 'Recharts demos styled with Material 3 color tokens. Bar, line, area, pie, radar, and radial charts.' },
+      { property: 'og:url', content: 'https://material-shadcn.vercel.app/charts' },
     ],
   }),
   component: Charts,

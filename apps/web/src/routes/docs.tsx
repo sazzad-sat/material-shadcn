@@ -12,9 +12,9 @@ export const Route = createFileRoute('/docs')({
     meta: [
       { title: 'Docs — material-shadcn' },
       { name: 'description', content: 'Documentation for material-shadcn. Learn how to add Material 3 colors to your shadcn/ui project.' },
-      { name: 'og:title', content: 'Docs — material-shadcn' },
-      { name: 'og:description', content: 'Documentation for material-shadcn. Learn how to add Material 3 colors to your shadcn/ui project.' },
-      { name: 'og:url', content: 'https://material-shadcn.vercel.app/docs' },
+      { property: 'og:title', content: 'Docs — material-shadcn' },
+      { property: 'og:description', content: 'Documentation for material-shadcn. Learn how to add Material 3 colors to your shadcn/ui project.' },
+      { property: 'og:url', content: 'https://material-shadcn.vercel.app/docs' },
     ],
   }),
   component: DocsLayout,
